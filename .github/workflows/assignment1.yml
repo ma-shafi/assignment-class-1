@@ -25,13 +25,14 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: install node js
-        uses: actions/setup-node@beta-v2
+        uses: actions/setup-node@v2-beta
         with:
           node-version: 14  
 
       # Runs a set of commands using the runners shell
       - name: install surge
         run: npm install --global surge
+      # Now to deploy website directly
       - name: deployment on surge
         run: surge ./ assignment-class1.surge.sh --token ${{ secrets.ASSIGNMENT1_SECRET }}
 
